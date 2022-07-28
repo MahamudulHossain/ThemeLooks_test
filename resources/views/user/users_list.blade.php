@@ -39,7 +39,7 @@
                 <td>{{ $user->city }}</td>
                 <td>{{ ucfirst($user->status) }}</td>
                 <td>
-                    <button class="btn btn-info">Edit</button>
+                    <a href="{{ url('register/edit_form/'.$user->id) }}"</a><button class="btn btn-info">Edit</button></a>
                     <a href="{{ url('register/user/delete/'.$user->id) }}"</a><button class="btn btn-danger">Delete</button></a>
                 </td>
             </tr>

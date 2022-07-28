@@ -5,7 +5,12 @@
 @section('content')
 
 
+
 <h2 style="text-align: center">User's List</h2>
+        @if(Session::has('msg'))
+        <p class="alert alert-info" style="text-align: center">{{ Session::get('msg') }}</p>
+        @endif
+
         @if(isset($users['0']))
         <table class="table">
             <thead>
@@ -35,7 +40,7 @@
                 <td>{{ ucfirst($user->status) }}</td>
                 <td>
                     <button class="btn btn-info">Edit</button>
-                    <button class="btn btn-danger">Delete</button>
+                    <a href="{{ url('register/user/delete/'.$user->id) }}"</a><button class="btn btn-danger">Delete</button></a>
                 </td>
             </tr>
             @endforeach

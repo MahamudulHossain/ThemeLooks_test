@@ -33,8 +33,13 @@ class RegisterController extends Controller
         return redirect('/');
     }
 
-       public function registerd_users_list(){
-            $users = RegisterUser::orderBy('id','desc')->get();
-            return view('users_list',compact('users'));
-       }
+    public function registerd_users_list(){
+        $users = RegisterUser::orderBy('id','desc')->get();
+        return view('users_list',compact('users'));
+    }
+
+    public function registerd_user_delete($id){
+        $user=RegisterUser::where('id',$id)->delete();
+        return redirect('/register/users_list')->with('msg','User Deleted Successfully');
+    }
 }

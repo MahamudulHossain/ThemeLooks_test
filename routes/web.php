@@ -13,4 +13,5 @@ Route::group(['prefix'=>'register'],function (){
     Route::get('/form',[RegisterController::class,'view_register_form']);
     Route::post('/submit',[RegisterController::class,'register_form_save']);
     Route::get('/users_list',[RegisterController::class,'registerd_users_list']);
+    Route::get('/user/delete/{id}',[RegisterController::class,'registerd_user_delete']);
 });

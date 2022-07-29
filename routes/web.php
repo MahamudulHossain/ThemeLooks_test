@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 
 
@@ -16,5 +17,10 @@ Route::group(['prefix'=>'register'],function (){
     Route::get('/user/delete/{id}',[RegisterController::class,'registerd_user_delete']);
     Route::get('/edit_form/{id}',[RegisterController::class,'view_register_edit_form']);
     Route::post('/update/{eid}',[RegisterController::class,'register_form_update']);
+
+});
+
+Route::group(['prefix'=>'product'],function(){
+    Route::get('/form',[ProductController::class,'view_product_form']);
 
 });

@@ -79,6 +79,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="{{ url('/register/users_list') }}">Users</a></li>
+                <li><a href="{{ url('/product/form') }}">Product</a></li>
             </ul>
           </div>
         </div>
@@ -175,14 +176,11 @@
   <script type="text/javascript" src="{{asset('front/assets/js/jquery.smartmenus.bootstrap.js')}}"></script>
   <!-- To Slider JS -->
   <script src="{{asset('front/assets/js/sequence.js')}}"></script>
-  <script src="{{asset('front/assets/js/sequence-theme.modern-slide-in.js')}}"></script>
   <!-- Product view slider -->
   <script type="text/javascript" src="{{asset('front/assets/js/jquery.simpleGallery.js')}}"></script>
   <script type="text/javascript" src="{{asset('front/assets/js/jquery.simpleLens.js')}}"></script>
   <!-- slick slider -->
   <script type="text/javascript" src="{{asset('front/assets/js/slick.js')}}"></script>
-  <!-- Price picker slider -->
-  <script type="text/javascript" src="{{asset('front/assets/js/nouislider.js')}}"></script>
   <!-- Custom js -->
   <script src="{{asset('front/assets/js/custom.js')}}"></script>
 

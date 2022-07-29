@@ -78,7 +78,7 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li><a href="{{ url('/register/form') }}">Register</a></li>
+                <li><a href="{{ url('/register/users_list') }}">Users</a></li>
             </ul>
           </div>
         </div>

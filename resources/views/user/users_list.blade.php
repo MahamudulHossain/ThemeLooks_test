@@ -5,7 +5,7 @@
 @section('content')
 
 
-
+<a href="{{ url('register/form') }}"><button class="btn btn-info" style="margin-top: 20px;margin-left:15px">Register Users</button>
 <h2 style="text-align: center">User's List</h2>
         @if(Session::has('msg'))
         <p class="alert alert-info" style="text-align: center">{{ Session::get('msg') }}</p>

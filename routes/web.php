@@ -5,9 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/',[ProductController::class,'view_products']);
 
 //Register
 Route::group(['prefix'=>'register'],function (){

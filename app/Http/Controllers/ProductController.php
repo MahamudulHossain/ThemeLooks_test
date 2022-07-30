@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
+    public function view_products(){
+        $load_products = Product::all();
+        return view('index',compact('load_products'));
+    }
+
     public function view_product_form(){
         return view('product.product_form');
     }

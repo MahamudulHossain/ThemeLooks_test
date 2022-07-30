@@ -78,7 +78,13 @@
             <ul class="nav navbar-nav">
                 <li><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="{{ url('/register/users_list') }}">Users</a></li>
-                <li><a href="{{ url('/product/form') }}">Product</a></li>
+                <li>
+                    <a href="javascript:void(0)">Product<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url('/product/list') }}">Product List</a></li>
+                        <li><a href="{{ url('/product/form') }}">Add Product</a></li>
+                    </ul>
+                </li>
             </ul>
           </div>
         </div>

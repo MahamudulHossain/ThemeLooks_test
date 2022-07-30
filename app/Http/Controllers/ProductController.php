@@ -62,4 +62,9 @@ class ProductController extends Controller
         $product_attrs = ProductAttribute::where(['product_id'=>$pro_id,'size'=>$pro_size])->get();
         return response()->json(['data'=>$product_attrs]);
     }
+
+    public function products_list(){
+        $products = Product::with('product_attributes')->get();
+        return view('product.products_list',compact('products'));
+    }
 }

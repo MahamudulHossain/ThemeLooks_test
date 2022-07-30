@@ -50,4 +50,16 @@ class ProductController extends Controller
     	});
         return redirect('/product/list')->with('msg','Product Added Successfully');
     }
+
+    public function product_detail($id){
+        $productInfo = Product::with('product_attributes')->where('id',$id)->get();
+        return view('product.product_details',compact('productInfo'));
+    }
+
+    public function size_based_product_detail(Request $req){
+        $pro_id = $req->productId;
+        $pro_size = $req->productSize;
+        $product_attrs = ProductAttribute::where(['product_id'=>$pro_id,'size'=>$pro_size])->get();
+        return response()->json(['data'=>$product_attrs]);
+    }
 }

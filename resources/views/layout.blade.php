@@ -18,7 +18,6 @@
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <script>
-    var IMAGE_PATH = "{{asset('storage/media/')}}";
       var WEB_PATH = "{{url('/')}}";
     </script>
 

@@ -16,7 +16,7 @@
                     @foreach ($load_products as $load_product)
                         <li>
                             <a class="aa-product-img" href="javascript:void(0)"><img src="{{asset('uploads/images')}}/{{$load_product->image}}" width="250px" height="300px"></a>
-                            <h4 class="aa-product-title" style="font-weight: bold"><a href="{{ url('product/details/',$load_product->id) }}">{{ $load_product->name }}</a></h4>
+                            <h4 class="aa-product-title" style="font-weight: bold"><a href="{{ url('product/details',$load_product->id) }}">{{ $load_product->name }}</a></h4>
                         </li>
                     @endforeach
                   </ul>

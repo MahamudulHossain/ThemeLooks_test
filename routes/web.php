@@ -22,5 +22,7 @@ Route::group(['prefix'=>'register'],function (){
 
 Route::group(['prefix'=>'product'],function(){
     Route::get('/form',[ProductController::class,'view_product_form']);
+    Route::post('/submit',[ProductController::class,'product_form_save']);
+
 
 });

@@ -5,7 +5,17 @@
 @section('content')
 
 <h2 style="text-align: center">Add Product</h2>
-<form action="" method="post">
+@if ($errors->any())
+    <div class="alert alert-danger" style="margin-top: 15px;">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+<form action="{{ url('product/submit') }}" method="post" enctype="multipart/form-data">
+    @csrf
     <div class="col-md-9">
         <div class="card" style="padding:10px;margin-bottom:10px;">
             <div class="card-body">
@@ -23,18 +33,18 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <input type="number" class="form-control" placeholder="Price" name="price" required>
+                                    <input type="number" class="form-control" placeholder="Price" name="price[]" required>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" placeholder="Size" name="size">
+                                    <input type="text" class="form-control" placeholder="Size" name="size[]">
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" placeholder="Color" name="color">
+                                    <input type="text" class="form-control" placeholder="Color" name="color[]">
                                 </div>
                             </div>
                             <div class="row" style="margin-top:30px;">
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" placeholder="Gender" name="gender">
+                                    <input type="text" class="form-control" placeholder="Gender" name="gender[]">
                                 </div>
                                 <div class="col-md-4">
                                     <input type="button" class="btn btn-success" value="Add More" onclick="add_attr()">
@@ -50,7 +60,7 @@
 </form>
 <script type="text/javascript">
     function add_attr(){
-        var add = '<tr><td><div class="card"  style="padding:10px;margin-bottom:10px;"><div class="card-body"><div class="row"><div class="col-md-4"><input type="number" class="form-control" placeholder="Price" name="price" required></div><div class="col-md-4"><input type="text" class="form-control" placeholder="Size" name="size"></div><div class="col-md-4"><input type="text" class="form-control" placeholder="Color" name="color"></div></div><div class="row" style="margin-top:30px;"><div class="col-md-4"><input type="text" class="form-control" placeholder="Gender" name="gender"></div><div class="col-md-4"><input type="button" class="btn btn-danger" value="Delete" onclick="delete_tr(this)"></div></div></div></div></td></tr>';
+        var add = '<tr><td><div class="card"  style="padding:10px;margin-bottom:10px;"><div class="card-body"><div class="row"><div class="col-md-4"><input type="number" class="form-control" placeholder="Price" name="price[]" required></div><div class="col-md-4"><input type="text" class="form-control" placeholder="Size" name="size[]"></div><div class="col-md-4"><input type="text" class="form-control" placeholder="Color" name="color[]"></div></div><div class="row" style="margin-top:30px;"><div class="col-md-4"><input type="text" class="form-control" placeholder="Gender" name="gender[]"></div><div class="col-md-4"><input type="button" class="btn btn-danger" value="Delete" onclick="delete_tr(this)"></div></div></div></div></td></tr>';
         jQuery('#attr_tbl').append(add);
     }
 

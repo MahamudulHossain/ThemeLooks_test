@@ -24,4 +24,5 @@ Route::group(['prefix'=>'product'],function(){
     Route::get('/details/{id}',[ProductController::class,'product_detail']);
     Route::get('/sizeBasedProductDetails',[ProductController::class,'size_based_product_detail']);
     Route::get('/list',[ProductController::class,'products_list']);
+    Route::get('/delete/{did}',[ProductController::class,'product_delete']);
 });

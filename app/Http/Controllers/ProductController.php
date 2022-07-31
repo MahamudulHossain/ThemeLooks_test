@@ -67,4 +67,17 @@ class ProductController extends Controller
         $products = Product::with('product_attributes')->get();
         return view('product.products_list',compact('products'));
     }
+
+    public function product_delete($did){
+        $delPro = Product::find($did);
+        if($delPro){
+            $delAttr = ProductAttribute::where('product_id',$did)->delete();
+            $image_path = public_path().'/uploads/images/'.$delPro->image;
+            unlink($image_path);
+            $delPro->delete();
+            return redirect('/product/list')->with('msg','Product Deleted Successfully');
+        }else{
+            return redirect('/product/list')->with('msg','Sorry! Something went wrong');
+        }
+    }
 }

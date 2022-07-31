@@ -25,4 +25,7 @@ Route::group(['prefix'=>'product'],function(){
     Route::get('/sizeBasedProductDetails',[ProductController::class,'size_based_product_detail']);
     Route::get('/list',[ProductController::class,'products_list']);
     Route::get('/delete/{did}',[ProductController::class,'product_delete']);
+    Route::get('/edit/{eid}',[ProductController::class,'product_edit_form']);
+    Route::post('/update/{uid}',[ProductController::class,'product_update']);
+
 });

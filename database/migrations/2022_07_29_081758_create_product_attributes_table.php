@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('product_attributes', function (Blueprint $table) {
             $table->id();
             $table->integer('product_id');
-            $table->string('gender')->default('null');
-            $table->string('size')->default('null');
-            $table->string('color')->default('null');
+            $table->string('gender')->nullable();
+            $table->string('size')->nullable();
+            $table->string('color')->nullable();
             $table->string('price');
             $table->timestamps();
         });
